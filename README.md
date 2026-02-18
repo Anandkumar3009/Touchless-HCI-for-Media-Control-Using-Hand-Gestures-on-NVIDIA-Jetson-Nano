@@ -14,14 +14,6 @@ The system detects hand landmarks using MediaPipe, extracts normalized features,
 - Gesture Mapping
 - Dataset Collection
 - Model Training
-- Deployment on Jetson Nano
-- Performance Metrics
-- Technical Design Decisions
-- Installation Guide
-- Running the System
-- Future Improvements
-- Author
-
 ---
 
 # Project Overview
@@ -56,7 +48,7 @@ Media Control
 
 ---
 
-# ✨ Key Features
+# Key Features
 
 - Real-time gesture detection
 - Edge deployment (Jetson Nano)
@@ -68,7 +60,7 @@ Media Control
 
 ---
 
-# 🎮 Supported Gestures
+# Supported Gestures
 
 | Gesture        | Action              |
 |---------------|--------------------|
@@ -104,7 +96,7 @@ Dataset stored as: gesture_dataset_cleaned.csv
 
 # Model Training
 
-Training is performed offline on laptop for computational efficiency.
+Training is performed offline on PC for computational efficiency.
 
 ### Models Used:
 
@@ -121,8 +113,4 @@ Training is performed offline on laptop for computational efficiency.
 6. Evaluate accuracy
 7. Save model using joblib
 
-### Example:
-
-```bash
-python train_model_jetson.py  
 
