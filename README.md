@@ -1,4 +1,4 @@
-# 🚀 Real-Time Hand Gesture Controlled Media Player on Jetson Nano
+#  Real-Time Hand Gesture Controlled Media Player on Jetson Nano
 
 An **Edge-AI based real-time gesture recognition system** enabling fully offline, touchless media control on the **NVIDIA Jetson Nano (ARM Cortex-A57 + Maxwell GPU)**.
 
@@ -11,7 +11,7 @@ The system performs:
 
 ---
 
-# 📌 Project Overview
+#  Project Overview
 
 This project implements a complete **low-latency Edge AI pipeline optimized for ARM-based SoCs**:
 
@@ -30,7 +30,7 @@ Camera Input
 
 ---
 
-# 📊 Performance Metrics
+#  Performance Metrics
 
 | **Metric** | **Achieved** |
 |------------|-------------|
@@ -41,11 +41,11 @@ Camera Input
 | **Power Consumption** | **~4.8W** |
 | **Latency Reduction (RF → MLP)** | **~94%** |
 
-> ✅ The system exceeds the **<200 ms latency requirement by more than 5×**.
+>  The system exceeds the **<200 ms latency requirement by more than 5×**.
 
 ---
 
-# 🏗 System Architecture
+# System Architecture
 
 Intel RealSense L515
 ↓
@@ -66,7 +66,7 @@ Media Control Execution
 
 ---
 
-# ⚙ ARM SoC Optimization Highlights
+#  ARM SoC Optimization Highlights
 
 This implementation is specifically optimized for **ARM Cortex-A57 architecture**:
 
@@ -80,7 +80,7 @@ This implementation is specifically optimized for **ARM Cortex-A57 architecture*
 
 ---
 
-# ✨ Key Features
+# Key Features
 
 - Real-time gesture detection
 - Fully offline edge deployment
@@ -94,7 +94,7 @@ This implementation is specifically optimized for **ARM Cortex-A57 architecture*
 
 ---
 
-# ✋ Supported Gestures
+#  Supported Gestures
 
 | **Gesture** | **Action** |
 |-------------|-----------|
@@ -107,7 +107,7 @@ This implementation is specifically optimized for **ARM Cortex-A57 architecture*
 
 ---
 
-# 📁 Dataset Collection
+#  Dataset Collection
 
 Dataset collected manually using **MediaPipe hand landmarks**.
 
@@ -132,7 +132,7 @@ gesture_dataset_cleaned.csv
 
 ---
 
-# 🧠 Model Training
+#  Model Training
 
 Training performed offline on PC for computational efficiency.
 
@@ -144,10 +144,9 @@ Training performed offline on PC for computational efficiency.
 
 ---
 
-## 🎯 Final Selected Model: Optimized MLP
+##  Final Selected Model: Optimized MLP
 
 ### Architecture
-
 - **Input:** 63 features
 - **Hidden Layer 1:** 64 neurons (ReLU)
 - **Hidden Layer 2:** 32 neurons (ReLU)
@@ -170,7 +169,7 @@ gesture_mlp_model.pkl
 
 ---
 
-# 🛠 Installation (Jetson Nano)
+#  Installation (Jetson Nano)
 
 ## Environment
 
@@ -180,6 +179,8 @@ gesture_mlp_model.pkl
 - MediaPipe 0.8.5 (CUDA build)
 
 ---
+ Architecture Diagram
+<img width="1536" height="1024" alt="aRCHITECTURE DIAGTAM" src="https://github.com/user-attachments/assets/391a5b46-9d1c-4438-b71d-a2a536fdc77f" />
 
 ## Install Dependencies
 
@@ -196,9 +197,7 @@ Near	0.5–1m
 Far	1.5–2.5m
 Performance remains stable due to scale-invariant normalization.
 
-🖼 Architecture Diagram
-<img width="1536" height="1024" alt="aRCHITECTURE DIAGTAM" src="https://github.com/user-attachments/assets/391a5b46-9d1c-4438-b71d-a2a536fdc77f" />
-💡 Why This Project Matters
+ Why This Project Matters
 This project demonstrates that:
 
 High-accuracy gesture recognition can run on low-power ARM SoCs
@@ -209,7 +208,7 @@ Deterministic real-time execution is achievable under strict latency constraints
 
 Edge AI pipelines can be production-ready without cloud dependency
 
-🌍 Potential Applications
+ Potential Applications
 Smart kiosks
 
 Automotive infotainment systems
@@ -218,7 +217,8 @@ Touchless HCI interfaces
 
 Embedded AI product deployment
 
-🏆 Project Summary
+Project Summary
+
 A fully optimized ARM-aware Edge AI deployment demonstrating:
 
 98% accuracy
