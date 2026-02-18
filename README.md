@@ -1,4 +1,4 @@
-Real-Time Hand Gesture Controlled Media Player on Jetson Nano
+#Real-Time Hand Gesture Controlled Media Player on Jetson Nano
 
 An edge-AI based real-time gesture recognition system enabling fully offline, touchless media control on the NVIDIA Jetson Nano (ARM Cortex-A57 + Maxwell GPU).
 
