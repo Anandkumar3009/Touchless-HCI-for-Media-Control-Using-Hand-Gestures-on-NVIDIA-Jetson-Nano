@@ -1,34 +1,74 @@
-# Real-Time Hand Gesture Controlled Media Player (Jetson Nano)
+# Real-Time Hand Gesture Controlled Media Player on Jetson Nano
 
-A real-time touchless media control system using hand gesture recognition deployed on NVIDIA Jetson Nano.
+An edge-AI based real-time gesture recognition system that enables touchless media control using NVIDIA Jetson Nano.
 
-The system detects hand landmarks using MediaPipe, classifies gestures using a trained ML model (Random Forest / MLP), and controls media playback via MPV player.
+The system detects hand landmarks using MediaPipe, extracts normalized features, classifies gestures using a trained ML model (Random Forest / MLP), and controls media playback via MPV using IPC socket communication.
 
 ---
 
-## Project Overview
+# Table of Contents
 
-This project implements an end-to-end edge AI pipeline:
+- Project Overview
+- System Architecture
+- Features
+- Gesture Mapping
+- Dataset Collection
+- Model Training
+- Deployment on Jetson Nano
+- Performance Metrics
+- Technical Design Decisions
+- Installation Guide
+- Running the System
+- Future Improvements
+- Author
 
-Camera Input → MediaPipe → Feature Extraction → ML Model → MPV Media Control
+---
+
+# Project Overview
+
+This project demonstrates a complete edge AI pipeline:
+
+Camera Input → MediaPipe Landmark Extraction → Feature Normalization → ML Classification → Media Player Control
 
 The model is trained offline on a laptop and deployed on Jetson Nano for real-time inference.
 
+The system operates fully offline and does not require internet connectivity.
+
 ---
 
-## Features
+# System Architecture
+Intel RealSense Camera
+↓
+MediaPipe Hand Landmark Detection (21 keypoints)
+↓
+Wrist-relative Normalization
+↓
+Feature Vector (63 values)
+↓
+ML Model (Random Forest / MLP)
+↓
+Gesture Prediction
+↓
+MPV IPC Socket Command
+↓
+Media Control
 
-- Real-time hand gesture recognition
-- Random Forest / MLP classifier
-- Edge deployment on Jetson Nano
-- MPV media control via IPC socket
+
+---
+
+# ✨ Key Features
+
+- Real-time gesture detection
+- Edge deployment (Jetson Nano)
+- Lightweight ML inference
 - Gesture stabilization & debouncing
-- FPS and latency monitoring overlay
-- Hardware acceleration enabled
+- FPS and latency overlay
+- Hardware-accelerated media playback
+- IPC-based MPV control (robust & efficient)
 
 ---
 
-## Supported Gestures
+# 🎮 Supported Gestures
 
 | Gesture        | Action              |
 |---------------|--------------------|
@@ -41,17 +81,48 @@ The model is trained offline on a laptop and deployed on Jetson Nano for real-ti
 
 ---
 
-## Technologies Used
+# Dataset Collection
 
-- Python 3
-- OpenCV
-- MediaPipe
-- Scikit-learn
-- Joblib
-- MPV Media Player
-- Intel RealSense Camera
-- NVIDIA Jetson Nano
+Dataset is collected manually using MediaPipe hand landmarks.
+
+Each sample contains:
+
+- 21 hand landmarks
+- (x, y, z) coordinates
+- Wrist-relative normalization
+- Scale normalization using hand size
+- Gesture label
+- User ID
+
+Total Features per sample:
+21 landmarks × 3 coordinates = 63 features
+
+Dataset stored as: gesture_dataset_cleaned.csv
+
 
 ---
 
+# Model Training
+
+Training is performed offline on laptop for computational efficiency.
+
+### Models Used:
+
+- Random Forest Classifier
+- Multi-Layer Perceptron (MLP)
+
+### Training Pipeline:
+
+1. Load dataset
+2. Remove unnecessary columns
+3. Split into train/test sets
+4. Apply scaling (for MLP)
+5. Train model
+6. Evaluate accuracy
+7. Save model using joblib
+
+### Example:
+
+```bash
+python train_model_jetson.py  
 
