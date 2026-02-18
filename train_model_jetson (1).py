@@ -46,5 +46,6 @@ print(f"MLP Accuracy: {model.score(X_test, y_test):.4f}")
 print("-" * 30)
 
 # 4. Save (Overwrites old model so you can test immediately)
-joblib.dump(model, "gesture_rf_model.pkl", protocol=4) 
+joblib.dump(model, "gesture_mlp_model.pkl", protocol=4) 
+
 print("MLP Model saved successfully!")
