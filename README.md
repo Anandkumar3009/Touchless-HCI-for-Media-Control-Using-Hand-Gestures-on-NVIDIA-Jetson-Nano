@@ -114,3 +114,4 @@ Training is performed offline on PC for computational efficiency.
 7. Save model using joblib
 
 
+<img width="1536" height="1024" alt="aRCHITECTURE DIAGTAM" src="https://github.com/user-attachments/assets/391a5b46-9d1c-4438-b71d-a2a536fdc77f" />
