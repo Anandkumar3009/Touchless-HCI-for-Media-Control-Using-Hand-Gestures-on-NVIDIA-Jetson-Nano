@@ -54,5 +54,4 @@ The model is trained offline on a laptop and deployed on Jetson Nano for real-ti
 
 ---
 
-## 📂 Project Structure
 
